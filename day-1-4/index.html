@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+  <!-- REACT DOM LIBRARY -->
+   <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <title>Timeline app</title>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/babel">
+ 
+ class Timeline extends React.Component {
+   render() {
+     return(
+      <div className="notificationsFrame">
+        <div className="wrapper">  
+          <Header/>
+          <Content/>
+        </div>
+      </div>
+
+     );
+  }
+ }
+  class Header extends React.Component {
+   render() {
+      return (
+        <div className="header">
+              <div className="fa fa-bars"></div>
+               <span className="title">Timeline</span>
+                <input type="text" className="searchInput" placeholder="Search ..." />
+              <div className="fa fa-search searchIcon"></div>
+        </div>
+      ); 
+   }
+
+  }
+
+  class Content extends React.Component {
+   render() {
+      return (
+        <div className="content">
+            <div className="line"></div>
+               <div className="item">
+                  <div className="avatar">
+                    <img alt='Doug' src="http://www.croop.cl/UI/twitter/images/doug.jpg" />
+                  </div>
+                <p className="inner-content">
+                  <p className="target"><span className="time">An hour ago</span><br/>
+                    Ate lunch</p>
+                  <div className="commentCount">
+                    2
+                    <span className="far fa-comments"></span>
+                  </div>
+                </p>  
+               </div>
+           </div>
+       ); 
+    }
+  }
+
+ 
+
+  var destination =  document.getElementById('app');
+
+  ReactDOM.render (
+<div>
+  <Timeline/>
+</div>,
+    destination
+    );
+    </script>
+    </body>
+    </html>
